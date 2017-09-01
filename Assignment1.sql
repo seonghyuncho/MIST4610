@@ -1,5 +1,7 @@
 USE ClassicModels;
-
+/**
+Need to work on data modeling as well
+*//
 
 /**
 List product names, 
