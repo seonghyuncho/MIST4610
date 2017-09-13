@@ -31,5 +31,5 @@ Order the results by the descending number of payments.
 
 SELECT customerName, AVG(amount), COUNT(checkNumber) FROM Customers
 Join Payments ON Customers.customerNumber = Payments.customerNumber
-WHERE amount > (SELECT AVG(amount) FROM Customers GROUP BY(customerName))
+WHERE amount > (SELECT AVG(amount) FROM Payments WHERE Customers.customerNumber = Payments.customerNumber) GROUP BY(customerName)
 ORDER BY COUNT(checkNumber) DESC;
