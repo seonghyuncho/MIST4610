@@ -23,9 +23,6 @@ ON Customers.salesRepEmployeeNumber = Employees.employeeNumber;
 
 /** Write a query to list the month, the year of when an order was placed and the number of orders placed during that month and year. **/
 
-SELECT *
-FROM Orders;
-
-SELECT
-FROM
-;
+SELECT MONTH(orderDate), YEAR(orderDate), COUNT(MONTH(orderDate)) AS 'Number of Orders'
+FROM Orders
+GROUP BY MONTH(orderDate), YEAR(orderDate);
